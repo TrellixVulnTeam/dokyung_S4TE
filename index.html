@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>첫번째 웹 페이지</title>
+        <style>
+            #fake_h2 {
+                background: red;
+            }
+            #real_h2 {
+                background: blue;
+            }
+            header > h4#a.set_one {
+                font-size: 10px;
+            }
+            p {
+                font-size: 9px;
+            }
+            p span {
+                font-size: 15px;
+            }
+            #background_test {
+                font-size: 20px;
+                background-image: url('https://scontent-hkg3-1.xx.fbcdn.net/v/t1.0-1/c170.50.621.621/s160x160/1098039_498237906928285_1766803411_n.jpg?oh=5c822614fb1b9748c3c8ca5c155c77e6&oe=5ABC86BE');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+            }
+
+            .yellow_box {
+                display: inline-block;
+                height: 100px;
+                width: 100px;
+                background: yellow;
+                border: 0px solid black;
+                border-width: 0 1px 5px 0;
+                border-radius: 20px;
+                box-shadow: 1px 1px 5px black;
+                padding: 30px;
+                margin: 10px;
+            }
+            .left_side {
+                display: inline-block;
+                width: 60%;
+                margin-right: 5%;
+            }
+            .right_side {
+                position: relative;
+                display: inline-block;
+                vertical-align: top;
+                width: 28%;
+                height: 500px;
+                margin-left: 5%;
+                background-color: red;
+            }
+            #test1 {
+                position: absolute;
+                width: 100px;
+                background-color: black;
+                top: 30%;
+                left: calc(50% - 50px);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="left_side">
+            <a href="http://naver.com/">네이버 링크</a>
+
+            <div id="div_1" class="yellow_box">
+                div1
+            </div>
+
+            <div id="div_2" class="yellow_box">
+                div2
+            </div>
+
+            <div id="div_3" class="yellow_box">
+                div3
+            </div>
+
+            <div>
+                <h1 style="background: red;">젤큰놈</h1>
+
+                <h2 id="fake_h2">그담큰놈</h2>
+
+                <h3>그담담큰놈</h3>
+                <h4 class="set_one real_h4">그담담담큰놈</h4>
+
+                <header>
+                    <h5 class="set_one">그담담담담큰놈</h5>
+                </header>
+
+                <h6 class="set_one">그담담담담담큰놈</h6>
+
+                <h2 id="real_h2">에이치투</h2>
+
+                <span>
+                    <div>
+                        <h2>에이치투</h2>
+                    </div>
+                </span>
+
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <span>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</span> Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                </p>
+                <p id="background_test">
+                    2. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                </p>
+                <div>div 속 텍스트</div>
+                <span>span1</span>
+                <span>span2</span>
+                <a href="http://naver.com/" target="_blank">
+                    네이버 링크
+                </a>
+
+                <a href="http://google.com/">
+                    <button>버튼입니다.</button>
+                </a>
+
+                <img src="https://scontent-hkg3-1.xx.fbcdn.net/v/t1.0-1/c170.50.621.621/s160x160/1098039_498237906928285_1766803411_n.jpg?oh=5c822614fb1b9748c3c8ca5c155c77e6&oe=5ABC86BE" />
+
+                <video src="https://www.w3schools.com/html/mov_bbb.mp4" autoplay controls></video>
+            </div>
+
+            <ul>
+                <li>내용</li>
+                <li>두번째</li>
+            </ul>
+
+            <hr />
+
+            <table>
+                <tr>
+                    <th>제목1</th>
+                    <th>제목2</th>
+                    <th>제목3</th>
+                    <th>제목4</th>
+                </tr>
+                <tr>
+                    <td>내용1</td>
+                    <td>내용2</td>
+                    <td>내용3</td>
+                    <td>내용4</td>
+                </tr>
+                <tr>
+                    <td>내용1</td>
+                    <td>내용2</td>
+                    <td>내용3</td>
+                    <td>내용4</td>
+                </tr>
+            </table>
+
+        </div>
+        <div class="right_side">
+            <div id="test1">하하하</div>
+        </div>
+    </body>
+</html>
