@@ -1,16 +1,20 @@
-j = input('숫자를 입력하세요: ')
-x = int(j) * 2
+def print_star(i, j):
+    blank = (j - i) // 2
+    star = i
+    print(' ' * blank + '*' * star)
 
-for i in range(1, x):
-	if i <= (x / 2):
-		if i % 2 == 0:
-			i += 1
-		else:
-			a = ' ' * ((int(j) - i) // 2) + '*' * i  
-			print(a)
-	else:
-		if i % 2 == 0:
-			i += 1
-		else:			
-			b = ' ' * ((int(j) - (x - i)) // 2) + '*' * (x - i)
-			print(b)
+
+def main():
+    j = int(input('숫자를 입력하세요: '))
+    if j % 2 == 0:
+        j -= 1
+
+    for i in range(1, j, 2):
+        print_star(i, j)
+
+    for i in range(j, 0, -2):
+        print_star(i, j)
+
+
+if __name__ == '__main__':
+    main()
