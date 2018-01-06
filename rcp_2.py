@@ -1,55 +1,76 @@
 import random
 
-score = 0
-w = "이겼습니다"
-l = "졌습니다"
-d = "비겼습니다"
 
-while True:
-    user = int(input("""
-~ 신나는 가위바위보 ~
+HISTORY = {
+    'win': 0,
+    'lost': 0,
+    'draw': 0,
+}
 
-1. 가위
-2. 바위
-3. 보
 
-원하는 선택지의 번호를 입력하세요:
-    """))
+def play():
+    while True:
+        user_choice = get_user_input()
+        result = calculate_result(user_choice)
+        process_result(result)
 
+
+def get_user_input():
+    input_msg = "~ 신나는 가위바위보 ~\n\n" \
+        + "1. 가위\n2. 바위\n3. 보\n\n" \
+        + "원하는 선택지의 번호를 입력하세요.(exit=q) : "
+
+    while True:
+        print_history()
+        input_str = input(input_msg)
+
+        if input_str not in ['1', '2', '3', 'q', 'Q']:
+            print("잘못 입력하였습니다. 다시 입력해주세요.")
+        elif input_str in ['q', 'Q']:
+            print("다음에 또 봐요~~")
+            exit()
+        else:
+            break
+
+    return int(input_str)
+
+
+def print_history():
+    msg = '\n***\nW : {0}, L : {1}, D : {2}\n***\n'.format(
+        HISTORY['win'],
+        HISTORY['lost'],
+        HISTORY['draw']
+    )
+    print(msg)
+
+
+def calculate_result(user_choice):
+    user = user_choice
     com = random.randint(1, 3)
 
     if user == com:
-        score += 0
-        print(d)
-    elif user == 1:
-        if com == 2:
-            score += 1
-            print(l)
-        elif com == 3:
-            score -= 1
-            print(w)
-    elif user == 2:
-        if com == 3:
-            score += 1
-            print(l)
-        elif com == 1:
-            score -= 1
-            print(w)
+        ret = "draw"
+    elif (user % 3) == (com + 1) % 3:
+        ret = "win"
     else:
-        if com == 1:
-            score += 1
-            print(l)
-        elif com == 2:
-            score -= 1
-            print(w)
+        ret = "lost"
 
-    end = input("""
-게임을 더 하시겠습니까?
-1. 네
-2. 아니요
+    return ret
 
-원하는 선택지의 번호를 입력하세요:
-        """)
-    if end == "2":
-        break
 
+def process_result(result):
+    if result == "win":
+        HISTORY['win'] += 1
+        print("\n이겼습니다")
+
+    elif result == "lost":
+        HISTORY['lost'] += 1
+        print("\n졌습니다")
+
+    else:
+        HISTORY['draw'] += 1
+        print("\n비겼습니다")
+
+
+if __name__ == '__main__':
+    play()
