@@ -23,7 +23,7 @@ def main():
 
 def write_file(webtoon_list):
     f = open("C:/dev/dokyung/마음의소리.html", 'w')
-    for webtoon in webtoon_list:
+    for webtoon in reversed(webtoon_list):
         f.write(webtoon + '\n')
     f.close()
 
