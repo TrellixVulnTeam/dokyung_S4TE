@@ -3,6 +3,7 @@ from django.utils import timezone
 from django.urls import reverse
 
 from .models import Portfolio
+from .forms import PortfolioForm
 
 
 def portfolio_list(request):
@@ -20,21 +21,18 @@ def portfolio_detail(request, pk):
 
 
 def portfolio_create(request):
-    ctx = {}
-    if request.method == "POST":
-        title = request.POST['title']
-        image = request.FILES['image']
-        description = request.POST['description']
-        start_date = request.POST['start_date']
-        end_date = request.POST['end_date']
-
+    form = PortfolioForm(request.POST or None, request.FILES or None)
+    if request.method == "POST" and form.is_valid():
         p = Portfolio.objects.create(
-            title=title,
-            image=image,
-            description=description,
-            start_date=start_date,
-            end_date=end_date,
+            title=form.cleaned_data['title'],
+            image=form.cleaned_data['image'],
+            description=form.cleaned_data['description'],
+            start_date=form.cleaned_data['start_date'],
+            end_date=form.cleaned_data['end_date'],
         )
-
         return redirect(reverse('portfolio_detail', kwargs={'pk': p.pk}))
+
+    ctx = {
+        'form': form,
+    }
     return render(request, 'core/portfolio_create.html', ctx)
