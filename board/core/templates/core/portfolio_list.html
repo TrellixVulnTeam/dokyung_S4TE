@@ -1,0 +1,42 @@
+{% extends 'core/portfolio_base.html' %}
+
+{% block portfolio_content %}
+<div>
+	{% for portfolio in portfolio_list %}
+	<div class="imgBox">
+		<a href="{% url 'portfolio_detail' portfolio.pk %}">
+			<img src="{{ portfolio.image.url }}" />
+			<p class="imgName">{{ portfolio.title }}</p>
+			<p>{{ portfolio.start_date|date:"Y년 n월 j일" }} ~ {{ portfolio.end_date|date:"Y년 n월 j일" }}</p>
+		</a>
+	</div>
+	{% empty %}
+	<h1>아직 없습니다.</h1>
+	{% endfor %}
+
+	<!--<div class="imgBox">
+		<a href="work1.html">
+			<img src="https://78.media.tumblr.com/fe507c17ced28158638a3583720d07ef/tumblr_nfuwh9wQe71tuqg3to1_1280.png" />
+			<p class="imgName">Graphic Poster</p>
+		</a>
+	</div>
+	<div class="imgBox">
+		<a href="#">
+			<img src="https://78.media.tumblr.com/de0b7c02d2718ae2b94cabd7bdb38fe5/tumblr_nbo7ijS8Lp1tuqg3to1_1280.jpg" />
+			<p class="imgName">photography</p>
+		</a>
+	</div>
+	<div class="imgBox">
+		<a href="#">
+			<img src="https://78.media.tumblr.com/1e7ebc78cef8a88f0adf4502217b13ea/tumblr_n3atkgoZTr1tuqg3to1_1280.jpg" />
+			<p class="imgName">illustration#1</p>
+		</a>
+	</div>
+	<div class="imgBox">
+		<a href="#">
+			<img src="https://78.media.tumblr.com/c60434a225400f6a588073c44d4ef4c4/tumblr_n2ip1c8rWb1tuqg3to1_1280.jpg">
+			<p class="imgName">illustration#2</p>
+		</a>
+	</div>-->
+</div>
+{% endblock %}

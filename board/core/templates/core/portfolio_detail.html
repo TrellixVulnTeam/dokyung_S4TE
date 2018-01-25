@@ -1,0 +1,12 @@
+{% extends 'core/portfolio_base.html' %}
+
+{% load static %}
+
+{% block portfolio_content %}
+<div>
+	<img src="{{ portfolio.image.url }}" />
+	<div class="divLine"></div> <!--구분선-->
+	<p class="imgNameSub">{{ portfolio.title }}</p>
+	<p class="imgDes">{{ portfolio.description }}</p>
+</div>
+{% endblock %}

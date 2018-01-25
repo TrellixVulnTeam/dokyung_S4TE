@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}{% endblock %}
+
+{% block head_extra %}{% endblock %}
+
+{% block content %}
+<div class="catList"> <!--좌측 메뉴바-->
+  <ul>
+    <li><a href="#">Graphic</a></li>
+    <li><a href="#">Branding</a></li>
+    <li><a href="#">UX/UI</a></li>
+    <li><a href="#">Typography</a></li>
+    <li><a href="#">Videos</a></li>
+  </ul>
+</div>
+<div class="imgBoxes">
+  {% block portfolio_content %}{% endblock %}
+</div>
+{% endblock %}
