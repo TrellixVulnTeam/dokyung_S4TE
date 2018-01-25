@@ -23,13 +23,7 @@ def portfolio_detail(request, pk):
 def portfolio_create(request):
     form = PortfolioForm(request.POST or None, request.FILES or None)
     if request.method == "POST" and form.is_valid():
-        p = Portfolio.objects.create(
-            title=form.cleaned_data['title'],
-            image=form.cleaned_data['image'],
-            description=form.cleaned_data['description'],
-            start_date=form.cleaned_data['start_date'],
-            end_date=form.cleaned_data['end_date'],
-        )
+        p = form.save()
         return redirect(reverse('portfolio_detail', kwargs={'pk': p.pk}))
 
     ctx = {

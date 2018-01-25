@@ -1,9 +1,9 @@
 from django import forms
 
+from .models import Portfolio
 
-class PortfolioForm(forms.Form):
-    title = forms.CharField(max_length=30)
-    image = forms.ImageField()
-    description = forms.CharField()
-    start_date = forms.DateField()
-    end_date = forms.DateField()
+
+class PortfolioForm(forms.ModelForm):
+    class Meta:
+        model = Portfolio
+        fields = '__all__'
