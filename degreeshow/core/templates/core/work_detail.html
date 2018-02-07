@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block work_content %}
+<button type="button">BACK</button>
+<dev class= "detail_contents">
+	<img src= "{{ work.image.url }}" />
+	<p class= "work_description">{{ work.description }}</p>
+</dev>
+{% endblock %}

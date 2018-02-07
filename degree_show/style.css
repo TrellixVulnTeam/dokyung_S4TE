@@ -1,0 +1,25 @@
+a {
+	font-family: Open Sans;
+	font-size: 15pt;
+	color: black;
+	text-decoration: none;
+	padding: 10px;
+}
+.work_img_list {
+	display: block;
+	top: 300px;
+	width: 1400px;
+	height: auto;
+}
+.work_img {
+	display: inline-block;
+	width: 300px;
+	height: 800px;
+	margin-right: 50px;
+}
+.work_img img{
+	display: block;
+	width: auto;
+	height: 500px;
+	overflow: hidden;
+}
